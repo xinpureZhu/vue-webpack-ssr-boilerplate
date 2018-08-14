@@ -10,21 +10,38 @@ axios.interceptors.request.use(config => {
 })
 
 axios.interceptors.response.use(response => {
-  return response.data
+  return response
 }, error => {
-  console.log('error = ', error)
-
   return Promise.reject(error)
 })
 
+const baseRequest = (config) => {
+  return axios.request(config)
+    .then(response => {
+      const { status, statusText, data } = response
+      if (status === 200 && statusText === 'OK') {
+        return data
+      }
+    })
+    .catch(error => {
+      console.log('axios error: ', e)
+    })
+}
+
 export default {
-  get (url, config) {
-    return axios.get(url, {
+  get (url, params, config) {
+    return baseRequest({
+      method: 'get',
+      url,
+      params,
       ...config
     })
   },
   post (url, data, config) {
-    return axios.post(url, data, {
+    return baseRequest({
+      method: 'post',
+      url,
+      data,
       ...config
     })
   }
