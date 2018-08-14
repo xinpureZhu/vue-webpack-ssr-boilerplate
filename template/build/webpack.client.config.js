@@ -14,7 +14,6 @@ const webpackConfig = merge(baseWebpackConfig, {
   },
   resolve: {
     alias: {
-      'create-api': './create-api-client.js'
     }
   },
   optimization:{
