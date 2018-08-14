@@ -81,7 +81,7 @@ function render (req, res) {
   }
 
   const context = {
-    title: 'SeeThru',
+    title: 'Vue SSR',
     url: req.url
   }
   renderer.renderToString(context, (err, html) => {
