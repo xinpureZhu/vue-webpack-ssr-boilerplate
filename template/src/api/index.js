@@ -24,7 +24,7 @@ const baseRequest = (config) => {
       }
     })
     .catch(error => {
-      console.log('axios error: ', e)
+      console.log('axios error: ', error.message)
     })
 }
 
