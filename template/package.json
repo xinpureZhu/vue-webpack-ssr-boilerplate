@@ -1,8 +1,8 @@
 {
-  "name": "my-project",
+  "name": "{{ name }}",
   "version": "1.0.0",
-  "description": "A Vue.js project",
-  "author": "xinpure@sina.cn",
+  "description": "{{ description }}",
+  "author": "{{ author }}",
   "private": true,
   "scripts": {
     "dev": "node server",
